@@ -1,14 +1,7 @@
-public class {
-  public static void main(String[] args) {
-    System.out.println("fldjsflk");
-    dosomething  {
-        sdfad;
-        }
-       somethingelse {
-              sdfsdjflslfjjf;
-              sdfjasdd;
-              afajfl;
-              }
-             }
-            }
-           
+public void format(String fileIn, String fileOut) throws IOException  {
+  Reader r = new Reader(fileIn);
+  Writer w = new Writer(fileOut);
+  String s = "";
+  String spaces = " ";
+  }
+ 
