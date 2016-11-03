@@ -1,3 +1,5 @@
+package com.company;
+
 import com.company.Reader;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +23,10 @@ public class ReaderTest {
     }
     @Test
     public void testReadChar() throws IOException {
+        Reader r = new Reader();
         char str = 'p';
         assertEquals(str, reader.readChar());
     }
+
 }
 

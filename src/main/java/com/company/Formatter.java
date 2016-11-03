@@ -11,8 +11,9 @@ public final class Formatter {
     /**
      *Formatter.
      */
-    private Formatter() {
+    public Formatter() {
         //not called
+
     }
     /**
      * Formatter.
@@ -23,6 +24,7 @@ public final class Formatter {
 
         Format format = new Format();
         format.format("format.txt", "output.txt");
+
 
     }
 }
