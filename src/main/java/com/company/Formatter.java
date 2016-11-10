@@ -9,22 +9,29 @@ import java.io.IOException;
 
 public final class Formatter {
     /**
-     *Formatter.
+     * Formatter.
      */
     public Formatter() {
         //not called
 
     }
+
     /**
      * Formatter.
+     *
      * @param args args
      * @throws IOException exception
+     * @throws com.company.Reader.InputExcetion check for emptiness
      */
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException,
+            Reader.InputExcetion {
 
         Format format = new Format();
-        format.format("format.txt", "output.txt");
 
-
+        Reader ir = new Reader("format.txt");
+        Writer iw = new Writer("output.txt");
+        format.format(ir, iw);
     }
+
+
 }

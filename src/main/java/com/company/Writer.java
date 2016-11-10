@@ -14,11 +14,11 @@ public class Writer implements IWriter {
 
     /**
      * creating a variable for writing.
-     * @param fileOut - name of file
+     * @param str - name of file
      * @throws IOException exception
      */
-    Writer(final String fileOut) throws IOException {
-        w = new FileWriter(fileOut);
+    Writer(final String str) throws IOException {
+        w = new FileWriter(str);
     }
 
     /**

@@ -8,9 +8,9 @@ import java.io.IOException;
 public interface IFormatter {
     /**
      * method for formatting code.
-     * @param fileIn - name of file for reading
-     * @param fileOut - name of file for writing
+     * @param ir reader-interface
+     * @param iw writer-interface
      * @throws IOException exception
      */
-    void format(final String fileIn, final String fileOut) throws IOException;
+    void format(IReader ir, IWriter iw) throws IOException;
 }

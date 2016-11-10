@@ -13,24 +13,30 @@ public class FormatTest {
     @Test
     public void format() throws Exception {
 
-        FileReader fr = new FileReader("output.txt");
-        Format format = new Format();
-        format.format("format.txt", "output.txt");
-        char c;
+        Reader r = new Reader("output.txt");
         String str = "";
-        while ((c = (char)fr.read()) !=(char) -1) {
-            str += c;
+
+        while (r.hasChars()){
+            char ch = r.readChar();
+            str+=ch;
         }
-        fr.close();
 
-        String strWait = "public void format(String fileIn, String fileOut) throws IOException  {\n" +
-                "  Reader r = new Reader(fileIn);\n" +
-                "  Writer w = new Writer(fileOut);\n" +
-                "  String s = \"\";\n" +
-                "  String spaces = \" \";\n" +
-                "  }\n ";
+        String strWait = "public void format(String fileIn, String fileOut) throws IOException {\n" +
+                "\t/*Reader r = new Reader(fileIn);\n" +
+                "\tif(test == 0) {\n" +
+                "\t\ttest++;\n" +
+                "\t\tswitch(n) {\n" +
+                "\t\t\tchar n;\n" +
+                "\t\t\tn+=s;\n" +
+                "\t\t\t}\n" +
+                "\t\t}*/\n" +
+                "\tWriter w =new Writer(fileOut);//ыаодыв}лаодылола\n" +
+                "\tString s =\"\";\n" +
+                "\tString spaces = \" \";\n" +
+                "\tObject obj = new Object;\n" +
+                "\t}\n";
 
-        assertEquals(strWait, str );
+        assertEquals(strWait, str);
     }
 
 }

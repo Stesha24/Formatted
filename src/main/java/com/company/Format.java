@@ -7,46 +7,127 @@ import java.io.IOException;
  */
 public class Format implements IFormatter {
     /**
-     * formatting code.
-     * @param fileIn - name of file for reading
-     * @param fileOut - name of file for writing
+     * Formatting code.
+     *
+     * @param ir - reader-interface
+     * @param iw - writer-interface
      * @throws IOException exception
      */
     @Override
-    public final void format(final String fileIn, final String fileOut)
+    public final void format(final IReader ir, final IWriter iw)
             throws IOException {
-        Reader r = new Reader(fileIn);
-        Writer w = new Writer(fileOut);
-        String s = "";
+        StringBuilder result = new StringBuilder();
+        String tab = "";
+        boolean isComment = false, isBlock = false;
+        while (ir.hasChars()) {
+            String str = readString(ir);
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
 
-        String spaces = " ";
+                switch (ch) {
+                    case '{':
+                        if (isComment) {
+                            result.append(ch);
+                            break;
+                        }
+                        tab += "\t";
+                        result.append(ch + "\n" + tab);
+                        break;
+                    case '}':
+                        if (isComment) {
+                            result.append(ch);
+                            break;
+                        }
+                        tab = tab.replaceFirst("\t", "");
+                        if (isBlock && str.charAt(i + 1) == '*'
+                                && str.charAt(i + 2) == '/') {
+                            result.append(ch);
+                            break;
+                        }
+                        result.append(ch + "\n" + tab);
+                        break;
+                    case ';':
+                        if (isComment) {
+                            result.append(ch);
+                            break;
+                        }
+                        if (isBlock) {
+                            result.append(ch + "\n" + tab);
+                            break;
+                        }
+                        result.append(ch);
+                        if (!str.contains("/")) {
+                            result.append("\n" + tab);
+                        }
+                        break;
+                    case '/':
+                        if (str.charAt(i + 1) == '*') {
+                            result.append("/*");
+                            isBlock = true;
+                            i++;
+                            break;
+                        } else if (str.charAt(i + 1) == '/') {
+                            isComment = true;
+                            result.append(ch);
+                            break;
+                        }
+                        result.append(ch);
+                        break;
+                    case '*':
 
-        while (r.hasChars()) {
-            char c = r.readChar();
-            s += c;
+                        if (str.charAt(i + 1) == '/') {
+                            isBlock = false;
+                            result.append("*/" + "\n" + tab);
+                            i++;
+                            break;
+                        }
+                        result.append(ch);
+                        break;
+                    case '"':
+                        result.append(ch);
+                        break;
+                    case '\n':
+                        if (isComment) {
+                            isComment = false;
+                            result.append(ch);
+                        }
+                        result.append(tab);
+                        break;
+                    default:
+                        result.append(ch);
+                        break;
+                }
 
-            if (c == ';') {
-                w.writeChar(s + "\n" + spaces);
-                s = "";
-            } else if (c == '{') {
-                spaces += spaces;
-                s = "{";
-                w.writeChar(" " + s + "\n" + spaces);
-                s = "";
-
-            } else if (c == '}') {
-                spaces = spaces.substring(0, spaces.length() - 1);
-                s = "}";
-                w.writeChar(s + "\n" + spaces);
-                s = "";
-
-            } else {
-                w.writeChar(s);
-                s = "";
+                iw.writeChar(result.toString());
+                result.setLength(0);
             }
         }
-        w.close();
+        iw.close();
 
-        }
     }
+
+    /**
+     * Method for reading string.
+     * @param r file for reading
+     * @return read string
+     * @throws IOException - exception
+     */
+
+    public final String readString(final IReader r) throws IOException {
+        StringBuilder result = new StringBuilder();
+        while (r.hasChars()) {
+            char ch = r.readChar();
+            if (ch != '{' && ch != ';' && ch != '}' && ch != '"'
+                    && ch != '/' && ch != '\n' && ch != '\\'
+                    && ch != ' ' && ch != '\t' && ch != ')' && ch != '*') {
+                result.append(ch);
+                break;
+            }
+            result.append(ch);
+        }
+        return result.toString();
+    }
+
+
+}
 

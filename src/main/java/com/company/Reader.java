@@ -1,6 +1,4 @@
 package com.company;
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -15,20 +13,36 @@ public class Reader implements IReader {
 
     /**
      * creating a variable for reading.
-     * @param fileIn - name of file
-     * @throws FileNotFoundException exception
+     * @param str - file for reading
+     * @throws IOException exception
+     * @throws  InputExcetion check for emptiness
      */
-    public Reader(final String fileIn) throws FileNotFoundException {
-        r = new FileReader(fileIn);
+    public Reader(final String str) throws IOException, InputExcetion {
+        r = new FileReader(str);
+        if (!r.ready()) {
+            throw new InputExcetion("File is empty");
+        }
     }
 
+    /**
+     * Exception for checking if file is empty.
+     */
+
+    static final class InputExcetion extends Exception {
+        /**
+         * Method call message about error.
+         * @param message message
+         */
+        private InputExcetion(final String message) {
+            super(message);
+        }
+    }
     /**
      * constructor.
      */
     public Reader() {
 
     }
-
 
     /**
      * check for presence of chars.
@@ -47,6 +61,8 @@ public class Reader implements IReader {
      */
     @Override
     public final char readChar() throws IOException {
-        return (char) r.read();
+        char c = (char) r.read();
+            return c;
     }
+
 }
