@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class ReaderTest {
     private Reader reader;
     @Before
-    public void setUp() throws IOException, Reader.InputExcetion {
+    public void setUp() throws IOException, Reader.InputException {
         this.reader = new Reader("format.txt");
     }
     @Test

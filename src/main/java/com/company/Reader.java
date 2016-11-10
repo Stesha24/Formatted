@@ -15,12 +15,12 @@ public class Reader implements IReader {
      * creating a variable for reading.
      * @param str - file for reading
      * @throws IOException exception
-     * @throws  InputExcetion check for emptiness
+     * @throws  InputException check for emptiness
      */
-    public Reader(final String str) throws IOException, InputExcetion {
+    public Reader(final String str) throws IOException, InputException {
         r = new FileReader(str);
         if (!r.ready()) {
-            throw new InputExcetion("File is empty");
+            throw new InputException("File is empty");
         }
     }
 
@@ -28,12 +28,12 @@ public class Reader implements IReader {
      * Exception for checking if file is empty.
      */
 
-    static final class InputExcetion extends Exception {
+    static final class InputException extends Exception {
         /**
          * Method call message about error.
          * @param message message
          */
-        private InputExcetion(final String message) {
+        private InputException(final String message) {
             super(message);
         }
     }
