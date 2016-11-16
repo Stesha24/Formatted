@@ -21,10 +21,10 @@ public final class Formatter {
      *
      * @param args args
      * @throws IOException exception
-     * @throws com.company.Reader.InputException check for emptiness
+     * @throws com.company.Reader.InputExcetion check for emptiness
      */
     public static void main(final String[] args) throws IOException,
-            Reader.InputException {
+            Reader.InputExcetion {
 
         Format format = new Format();
 
