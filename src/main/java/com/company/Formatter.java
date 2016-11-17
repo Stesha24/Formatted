@@ -8,6 +8,7 @@ import java.io.IOException;
  */
 
 public final class Formatter {
+
     /**
      * Formatter.
      */
@@ -20,18 +21,19 @@ public final class Formatter {
      * Formatter.
      *
      * @param args args
-     * @throws IOException exception
-     * @throws com.company.Reader.InputExcetion check for emptiness
+     * @throws IOException                       exception
+     * @throws com.company.Reader.InputException check for emptiness
      */
-    public static void main(final String[] args) throws IOException,
-            Reader.InputExcetion {
+    public static void main(final String[] args)
+            throws IOException, Reader.InputException {
 
         Format format = new Format();
 
         Reader ir = new Reader("format.txt");
         Writer iw = new Writer("output.txt");
         format.format(ir, iw);
+
     }
 
-
 }
+

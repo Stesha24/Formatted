@@ -7,36 +7,25 @@ import java.io.FileReader;
 import static org.junit.Assert.*;
 
 /**
- * Created by anastasia on 03.11.16.
+ * Test for format class.
  */
 public class FormatTest {
     @Test
     public void format() throws Exception {
-
-        Reader r = new Reader("output.txt");
+        String str1 = "test";
+        Reader r = new Reader(str1);
         String str = "";
+        char currChar = r.readChar();
+        while (r.hasChars()) {
 
-        while (r.hasChars()){
-            char ch = r.readChar();
-            str+=ch;
+            Invoker inv = new Invoker(new getCharCommand(currChar));
+            str += inv.getChar();
         }
 
-        String strWait = "public void format(String fileIn, String fileOut) throws IOException {\n" +
-                "\t/*Reader r = new Reader(fileIn);\n" +
-                "\tif(test == 0) {\n" +
-                "\t\ttest++;\n" +
-                "\t\tswitch(n) {\n" +
-                "\t\t\tchar n;\n" +
-                "\t\t\tn+=s;\n" +
-                "\t\t\t}\n" +
-                "\t\t}*/\n" +
-                "\tWriter w =new Writer(fileOut);//ыаодыв}лаодылола\n" +
-                "\tString s =\"\";\n" +
-                "\tString spaces = \" \";\n" +
-                "\tObject obj = new Object;\n" +
-                "\t}\n";
 
-        assertEquals(strWait, str);
+        assertEquals("qwerty{\n\t", str);
+
     }
+
 
 }
