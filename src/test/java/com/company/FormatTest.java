@@ -16,11 +16,6 @@ public class FormatTest {
         Reader r = new Reader(str1);
         String str = "";
         char currChar = r.readChar();
-        while (r.hasChars()) {
-
-            Invoker inv = new Invoker(new getCharCommand(currChar));
-            str += inv.getChar();
-        }
 
 
         assertEquals("qwerty{\n\t", str);

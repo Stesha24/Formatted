@@ -27,7 +27,7 @@ public class Writer implements IWriter {
      * @throws IOException exception
      */
     @Override
-    public final void writeChar(final String c) throws IOException {
+    public final void writeChar(final char c) throws IOException {
         w.write(c);
     }
 

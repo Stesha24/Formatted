@@ -11,7 +11,7 @@ public interface IWriter {
      * @param c string for writing
      * @throws IOException exception
      */
-    void writeChar(String c) throws IOException;
+    void writeChar(char c) throws IOException;
     /**
      * close a file.
      * @throws IOException exception

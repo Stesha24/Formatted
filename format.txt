@@ -1,2 +1,2 @@
-public void format(String fileIn, String fileOut) throws IOException {Reader r = new Reader(fileIn);if(test == 0) {test++;switch(n) {char n;n+=s;}}Writer w =new Writer(fileOut);//comment
+public void format(String fileIn, String fileOut) throws IOException {/*Reader r = new Reader(fileIn);if(test == 0)*/ {test++;switch(n) {char n;n+=s;}}Writer w =new Writer(fileOut);//comment
 String s ="";String spaces = " ";Object obj = new Object;}

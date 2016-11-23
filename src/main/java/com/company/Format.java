@@ -1,5 +1,8 @@
 package com.company;
 
+import Commands.Context;
+import Commands.Map;
+
 import java.io.IOException;
 
 /**
@@ -12,12 +15,15 @@ public class Format implements IFormatter {
     public final void format(final IReader ir, final IWriter iw)
             throws IOException {
         String str;
-
+        Context context = new Context(ir, iw);
+        Map m = new Map();
+        context.setCurrChar(ir.readChar());
         while (ir.hasChars()) {
-            Invoker inv = new Invoker(new getCharCommand(ir.readChar()));
-            str = inv.getChar();
-            iw.writeChar(str);
+            context.setNextChar(ir.readChar());
+            m.get(context.getCurrChar()).execute(context);
+            context.setCurrChar(context.getNextChar());
         }
+        m.get(context.getCurrChar()).execute(context);
         iw.close();
     }
 
