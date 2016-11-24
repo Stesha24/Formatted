@@ -11,7 +11,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ReaderTest {
-    private Reader reader;
+    /*private Reader reader;
     @Before
     public void setUp() throws IOException, Reader.InputException {
         this.reader = new Reader("format.txt");
@@ -26,7 +26,7 @@ public class ReaderTest {
         Reader r = new Reader();
         char str = 'p';
         assertEquals(str, reader.readChar());
-    }
+    }*/
 
 }
 

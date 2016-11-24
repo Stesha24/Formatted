@@ -1,9 +1,7 @@
 package com.company;
 
-import Commands.Context;
-import Commands.Map;
-
-import java.io.IOException;
+import сommands.Context;
+import сommands.Map;
 
 /**
  * class for Formatting code.
@@ -13,7 +11,7 @@ public class Format implements IFormatter {
 
     @Override
     public final void format(final IReader ir, final IWriter iw)
-            throws IOException {
+            throws ReaderException, WriterException {
         String str;
         Context context = new Context(ir, iw);
         Map m = new Map();

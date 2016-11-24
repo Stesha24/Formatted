@@ -1,20 +1,18 @@
 package com.company;
 
-import java.io.IOException;
-
 /**
  * Interface for Writer.
  */
 public interface IWriter {
     /**
      * write char in file.
+     * @throws WriterException exception
      * @param c string for writing
-     * @throws IOException exception
      */
-    void writeChar(char c) throws IOException;
+    void writeChar(char c) throws WriterException;
     /**
      * close a file.
-     * @throws IOException exception
+     * @throws WriterException exception
      */
-    void close() throws IOException;
+    void close() throws WriterException;
 }

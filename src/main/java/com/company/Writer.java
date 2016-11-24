@@ -15,10 +15,14 @@ public class Writer implements IWriter {
     /**
      * creating a variable for writing.
      * @param str - name of file
-     * @throws IOException exception
+     * @throws WriterException exception
      */
-    Writer(final String str) throws IOException {
-        w = new FileWriter(str);
+    Writer(final String str) throws WriterException {
+        try {
+            w = new FileWriter(str);
+        } catch (IOException e) {
+            throw new WriterException("File can't be open");
+        }
     }
 
     /**
@@ -27,8 +31,12 @@ public class Writer implements IWriter {
      * @throws IOException exception
      */
     @Override
-    public final void writeChar(final char c) throws IOException {
-        w.write(c);
+    public final void writeChar(final char c) throws WriterException {
+       try {
+           w.write(c);
+       } catch (IOException e) {
+           throw new WriterException("Char can't be write");
+       }
     }
 
     /**
@@ -36,7 +44,11 @@ public class Writer implements IWriter {
      * @throws IOException exception
      */
     @Override
-    public final void close() throws IOException {
-        w.close();
+    public final void close() throws WriterException {
+        try {
+            w.close();
+        } catch (IOException e) {
+            throw new WriterException("File hasn't been close");
+        }
     }
 }

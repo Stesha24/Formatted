@@ -1,22 +1,20 @@
 package com.company;
 
-import java.io.IOException;
-
 /**
  * Interface for Reader.
  */
 public interface IReader {
     /**
      * check for presence of chars.
+     * @throws ReaderException exception
      * @return true or false
-     * @throws IOException exception
      */
-    boolean hasChars() throws IOException;
+    boolean hasChars() throws ReaderException;
 
     /**
      * reading chars from file.
+     * @throws ReaderException exception
      * @return char
-     * @throws IOException exception
      */
-    char readChar() throws IOException;
+    char readChar() throws ReaderException;
 }

@@ -1,4 +1,5 @@
 package com.company;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -15,12 +16,14 @@ public class Reader implements IReader {
      * creating a variable for reading.
      * @param str - file for reading
      * @throws IOException exception
-     * @throws  InputException check for emptiness
+     * @throws  ReaderException check file
      */
-    public Reader(final String str) throws IOException, InputException {
-        r = new FileReader(str);
-        if (!r.ready()) {
-            throw new InputException("File is empty");
+    public Reader(final String str) throws ReaderException {
+        try {
+            r = new FileReader(str);
+
+        } catch (FileNotFoundException f) {
+            throw new ReaderException("File isn't found");
         }
     }
 
@@ -28,15 +31,7 @@ public class Reader implements IReader {
      * Exception for checking if file is empty.
      */
 
-    static final class InputException extends Exception {
-        /**
-         * Method call message about error.
-         * @param message message
-         */
-        private InputException(final String message) {
-            super(message);
-        }
-    }
+
     /**
      * constructor.
      */
@@ -47,22 +42,30 @@ public class Reader implements IReader {
     /**
      * check for presence of chars.
      * @return true or false
-     * @throws IOException exception
+     * @throws ReaderException have chars
      */
     @Override
-    public final boolean hasChars() throws IOException {
-        return r.ready();
+    public final boolean hasChars() throws ReaderException {
+        try {
+            return r.ready();
+        } catch (IOException e) {
+            throw new ReaderException("File hasn't got chars");
+        }
     }
 
     /**
      * reading chars from file.
      * @return char
-     * @throws IOException exception
+     * @throws ReaderException check for reading file
      */
     @Override
-    public final char readChar() throws IOException {
-        char c = (char) r.read();
+    public final char readChar() throws ReaderException {
+        try {
+            char c = (char) r.read();
             return c;
+        } catch (IOException e) {
+            throw new ReaderException("File can't be read");
+        }
     }
 
 }

@@ -1,8 +1,5 @@
 package com.company;
 
-import java.io.IOException;
-
-
 /**
  * Program for formatting code.
  */
@@ -21,11 +18,12 @@ public final class Formatter {
      * Formatter.
      *
      * @param args args
-     * @throws IOException                       exception
-     * @throws com.company.Reader.InputException check for emptiness
+     * @throws ReaderException exception
+     * @throws WriterException exception
+     * @throws FormatterException exception
      */
     public static void main(final String[] args)
-            throws IOException, Reader.InputException {
+            throws ReaderException, WriterException, FormatterException {
 
         Format format = new Format();
 
