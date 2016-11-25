@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 public class FormatTest {
     @Test
     public void format() throws Exception {
-        BufferedReader br = new BufferedReader(new StringReader("qwerty;"));
 
 
     }
