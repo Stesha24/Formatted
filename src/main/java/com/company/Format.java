@@ -1,7 +1,7 @@
 package com.company;
 
-import сommands.Context;
-import сommands.Map;
+import commands.Context;
+import commands.Map;
 
 /**
  * class for Formatting code.

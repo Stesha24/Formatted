@@ -1,20 +1,33 @@
-package Commands;
+package commands;
 
 import java.util.HashMap;
 
 /**
- * Created by anastasia on 22.11.16.
+ * Map with chars and commands.
  */
 public class Map {
+    /**
+     * Creating HashMap.
+     */
     private HashMap<Character, ICommand> conditions;
 
-    public ICommand get (char ch) {
+    /**
+     * Getting char.
+     * @param ch char
+     * @return condition for char
+     */
+    public final ICommand get(final char ch) {
         if (conditions.containsKey(ch)) {
             return conditions.get(ch);
-        } else
+        } else {
             return conditions.get(null);
+        }
     }
-    public Map () {
+
+    /**
+     * Map with conditions.
+     */
+    public Map() {
         conditions = new HashMap<>();
         conditions.put('{', new OpenBrace());
         conditions.put('}', new CloseBrace());

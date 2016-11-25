@@ -2,7 +2,8 @@ package com.company;
 
 import org.junit.Test;
 
-import java.io.FileReader;
+import java.io.*;
+import java.io.StringReader;
 
 import static org.junit.Assert.*;
 
@@ -12,15 +13,8 @@ import static org.junit.Assert.*;
 public class FormatTest {
     @Test
     public void format() throws Exception {
-        String str1 = "test";
-        Reader r = new Reader(str1);
-        String str = "";
-        char currChar = r.readChar();
+        BufferedReader br = new BufferedReader(new StringReader("qwerty;"));
 
-
-        assertEquals("qwerty{\n\t", str);
 
     }
-
-
 }

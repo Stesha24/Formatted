@@ -1,13 +1,17 @@
-package Commands;
+package commands;
 
-import java.io.IOException;
+import com.company.WriterException;
 
 /**
- * Created by anastasia on 22.11.16.
+ * Command for ';'.
  */
 public class Semicolon implements ICommand {
+    /**
+     * Executing command.
+     * @param context context
+     */
     @Override
-    public void execute(Context context) {
+    public final void execute(final Context context) {
         try {
 
 
@@ -32,7 +36,7 @@ public class Semicolon implements ICommand {
                 context.getIw().writeChar('\t');
             }
             context.setCurrChar(context.getNextChar());
-        } catch (IOException e) {
+        } catch (WriterException e) {
             e.printStackTrace();
         }
     }

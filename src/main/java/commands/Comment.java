@@ -1,13 +1,18 @@
-package Commands;
+package commands;
 
-import java.io.IOException;
+import com.company.WriterException;
+
 
 /**
- * Created by anastasia on 22.11.16.
+ * Command for comment.
  */
 public class Comment implements ICommand {
+    /**
+     * Executing command.
+     * @param context context
+     */
     @Override
-    public void execute(Context context) {
+    public final void execute(final Context context) {
         try {
             if (context.getNextChar() == '/' || context.getNextChar() == '*') {
                 context.getIw().writeChar(context.getCurrChar());
@@ -17,8 +22,7 @@ public class Comment implements ICommand {
             }
             context.getIw().writeChar(context.getCurrChar());
             context.setCurrChar(context.getNextChar());
-            return;
-        } catch (IOException e) {
+        } catch (WriterException e) {
             e.printStackTrace();
         }
     }

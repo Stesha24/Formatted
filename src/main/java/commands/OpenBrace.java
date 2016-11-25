@@ -1,22 +1,23 @@
-package Commands;
+package commands;
 
-import java.io.IOException;
-
+import com.company.WriterException;
 
 /**
- * Created by anastasia on 22.11.16.
+ * Command for '{'.
  */
 public class OpenBrace implements ICommand {
+    /**
+     * Executing command.
+     * @param context context
+     */
     @Override
-    public void execute(Context context) {
+    public final void execute(final Context context) {
         try {
             if (context.isComment || context.isString) {
                 context.getIw().writeChar(context.getCurrChar());
-
                 context.setCurrChar(context.getNextChar());
                 return;
             }
-
             context.getIw().writeChar(context.getCurrChar());
             context.getIw().writeChar('\n');
             context.incTab();
@@ -24,7 +25,7 @@ public class OpenBrace implements ICommand {
                 context.getIw().writeChar('\t');
             }
             context.setCurrChar(context.getNextChar());
-        } catch (IOException e) {
+        } catch (WriterException e) {
             e.printStackTrace();
         }
 

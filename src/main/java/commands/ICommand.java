@@ -1,4 +1,4 @@
-package Commands;
+package commands;
 
 /**
  * Interface for commands.
@@ -6,6 +6,7 @@ package Commands;
 public interface ICommand {
     /**
      * execute formatting char.
+     * @param context context
      */
      void execute(Context context);
 }
