@@ -13,11 +13,11 @@ public class Default implements ICommand {
      */
 
     @Override
-    public final void execute(final Context context) {
+    public final void execute(final Context context) throws WriterException {
         try {
             context.getIw().writeChar(context.getCurrChar());
         } catch (WriterException e) {
-            e.printStackTrace();
+            throw new WriterException("Something went wrong");
         }
         context.setCurrChar(context.getNextChar());
     }

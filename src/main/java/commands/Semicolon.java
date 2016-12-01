@@ -11,7 +11,7 @@ public class Semicolon implements ICommand {
      * @param context context
      */
     @Override
-    public final void execute(final Context context) {
+    public final void execute(final Context context) throws WriterException {
         try {
 
 
@@ -37,7 +37,7 @@ public class Semicolon implements ICommand {
             }
             context.setCurrChar(context.getNextChar());
         } catch (WriterException e) {
-            e.printStackTrace();
+            throw new WriterException("Something went wrong");
         }
     }
 }

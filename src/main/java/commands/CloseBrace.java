@@ -12,7 +12,7 @@ public class CloseBrace implements ICommand {
      * @param context context
      */
     @Override
-    public final void execute(final Context context) {
+    public final void execute(final Context context) throws WriterException {
         try {
             if (context.isComment || context.isString) {
                 context.getIw().writeChar(context.getCurrChar());
@@ -43,7 +43,7 @@ public class CloseBrace implements ICommand {
             context.setCurrChar(context.getNextChar());
 
         } catch (WriterException e) {
-            e.printStackTrace();
+            throw new WriterException("Something went wrong");
         }
     }
 }

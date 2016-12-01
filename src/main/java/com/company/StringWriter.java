@@ -1,17 +1,39 @@
 package com.company;
 
 /**
- * Created by anastasia on 24.11.16.
+ * Writer for strings.
  */
 public class StringWriter implements IWriter {
+    /**
+     * new String Builder.
+     */
     private StringBuilder res = new StringBuilder();
+
+    /**
+     * write char.
+     * @param c string for writing
+     * @throws WriterException exception
+     */
     @Override
-    public void writeChar(char c) throws WriterException {
+    public final void writeChar(final char c) throws WriterException {
         res.append(c);
     }
 
+    /**
+     * close.
+     * @throws WriterException exception
+     */
     @Override
     public void close() throws WriterException {
 
+    }
+
+    /**
+     * Get string.
+     * @return string
+     */
+    public final String getString() {
+        res = res.deleteCharAt(res.length() - 1);
+        return res.toString();
     }
 }

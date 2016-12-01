@@ -39,6 +39,11 @@ public class Writer implements IWriter {
        }
     }
 
+    @Override
+    public final String getString() {
+        return null;
+    }
+
     /**
      * close a file.
      * @throws IOException exception

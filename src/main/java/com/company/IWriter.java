@@ -10,6 +10,13 @@ public interface IWriter {
      * @param c string for writing
      */
     void writeChar(char c) throws WriterException;
+
+    /**
+     * Getting string.
+     * @return string
+     */
+    String getString();
+
     /**
      * close a file.
      * @throws WriterException exception

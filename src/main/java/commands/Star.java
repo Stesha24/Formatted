@@ -12,7 +12,8 @@ public class Star implements ICommand {
      * @param context context
      */
     @Override
-    public final void execute(final Context context) {
+    public final void execute(final Context context)
+            throws WriterException, ReaderException {
         try {
             if (context.getNextChar() == '/') {
                 context.getIw().writeChar(context.getCurrChar());
@@ -29,9 +30,9 @@ public class Star implements ICommand {
             context.getIw().writeChar(context.getCurrChar());
             context.setCurrChar(context.getNextChar());
         } catch (WriterException e) {
-            e.printStackTrace();
+            throw new WriterException("Something went wrong");
         } catch (ReaderException e) {
-            e.printStackTrace();
+            throw new ReaderException("Something went wrong");
         }
     }
 }

@@ -12,7 +12,7 @@ public class Comment implements ICommand {
      * @param context context
      */
     @Override
-    public final void execute(final Context context) {
+    public final void execute(final Context context) throws WriterException {
         try {
             if (context.getNextChar() == '/' || context.getNextChar() == '*') {
                 context.getIw().writeChar(context.getCurrChar());
@@ -23,7 +23,7 @@ public class Comment implements ICommand {
             context.getIw().writeChar(context.getCurrChar());
             context.setCurrChar(context.getNextChar());
         } catch (WriterException e) {
-            e.printStackTrace();
+            throw new WriterException("Something went wrong");
         }
     }
 }
