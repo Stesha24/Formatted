@@ -1,15 +1,11 @@
 package com.company;
 
-import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
-
-import java.io.FileWriter;
-import java.io.IOException;
 
 import static org.junit.Assert.*;
 
 /**
- * Created by anastasia on 01.12.16.
+ * Test for Writer.
  */
 public class WriterTest {
     private Format testFormat = new Format();

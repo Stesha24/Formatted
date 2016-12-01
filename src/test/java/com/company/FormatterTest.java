@@ -2,10 +2,9 @@ package com.company;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 /**
- * Created by anastasia on 03.11.16.
+ * Test for main.
  */
 public class FormatterTest {
     @Test
