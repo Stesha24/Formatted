@@ -1,7 +1,4 @@
-package com.company.Reader;
-
-import com.company.Reader.Reader;
-import com.company.Reader.ReaderException;
+package com.company.reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

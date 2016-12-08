@@ -1,9 +1,9 @@
 package com.company.formatter;
 
-import com.company.Reader.IReader;
-import com.company.Writer.IWriter;
-import com.company.Reader.ReaderException;
-import com.company.Writer.WriterException;
+import com.company.reader.IReader;
+import com.company.writer.IWriter;
+import com.company.reader.ReaderException;
+import com.company.writer.WriterException;
 import com.company.commands.Context;
 import com.company.commands.Map;
 

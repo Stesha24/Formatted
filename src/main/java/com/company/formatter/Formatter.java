@@ -1,9 +1,9 @@
 package com.company.formatter;
 
-import com.company.Reader.Reader;
-import com.company.Reader.ReaderException;
-import com.company.Writer.Writer;
-import com.company.Writer.WriterException;
+import com.company.reader.Reader;
+import com.company.reader.ReaderException;
+import com.company.writer.Writer;
+import com.company.writer.WriterException;
 
 /**
  * Program for formatting code.

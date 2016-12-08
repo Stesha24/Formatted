@@ -1,9 +1,11 @@
 package com.company.Reader;
 
+import com.company.reader.IReader;
+import com.company.reader.Reader;
+import com.company.reader.ReaderException;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import static org.junit.Assert.*;

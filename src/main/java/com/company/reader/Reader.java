@@ -1,4 +1,4 @@
-package com.company.Reader;
+package com.company.reader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,7 +16,6 @@ public class Reader implements IReader {
     /**
      * creating a variable for reading.
      * @param str - file for reading
-     * @throws IOException exception
      * @throws ReaderException check file
      */
     public Reader(final String str) throws ReaderException {
@@ -27,11 +26,6 @@ public class Reader implements IReader {
             throw new ReaderException("File isn't found");
         }
     }
-
-    /**
-     * Exception for checking if file is empty.
-     */
-
 
     /**
      * constructor.

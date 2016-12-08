@@ -1,5 +1,6 @@
 package com.company.Writer;
 
+import com.company.writer.WriterException;
 import org.junit.Test;
 
 

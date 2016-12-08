@@ -1,6 +1,6 @@
 package com.company.commands;
 
-import com.company.Writer.WriterException;
+import com.company.writer.WriterException;
 
 /**
  * Command for '{'.

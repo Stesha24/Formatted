@@ -1,10 +1,9 @@
 package com.company.formatter;
 
-import com.company.Reader.IReader;
-import com.company.Reader.StringReader;
-import com.company.Writer.IWriter;
-import com.company.Writer.StringWriter;
-import com.company.formatter.Format;
+import com.company.reader.IReader;
+import com.company.reader.StringReader;
+import com.company.writer.IWriter;
+import com.company.writer.StringWriter;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

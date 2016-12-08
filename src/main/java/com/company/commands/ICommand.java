@@ -1,7 +1,7 @@
 package com.company.commands;
 
-import com.company.Reader.ReaderException;
-import com.company.Writer.WriterException;
+import com.company.reader.ReaderException;
+import com.company.writer.WriterException;
 
 /**
  * Interface for commands.

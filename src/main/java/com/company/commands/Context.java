@@ -1,9 +1,7 @@
 package com.company.commands;
 
-import com.company.Reader.IReader;
-import com.company.Reader.IReader;
-import com.company.Writer.IWriter;
-import com.company.Writer.IWriter;
+import com.company.reader.IReader;
+import com.company.writer.IWriter;
 
 /**
  * Context.

@@ -1,4 +1,4 @@
-package com.company.Reader;
+package com.company.reader;
 
 /**
  * Interface for Reader.
