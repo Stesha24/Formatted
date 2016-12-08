@@ -1,12 +1,9 @@
-package com.company.Writer;
+package com.company.writer;
 
 import com.company.reader.IReader;
 import com.company.reader.Reader;
 import com.company.reader.ReaderException;
 import com.company.formatter.Format;
-import com.company.writer.IWriter;
-import com.company.writer.Writer;
-import com.company.writer.WriterException;
 import org.junit.Before;
 import org.junit.Test;
 

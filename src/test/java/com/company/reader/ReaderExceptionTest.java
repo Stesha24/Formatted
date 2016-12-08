@@ -1,6 +1,5 @@
-package com.company.Reader;
+package com.company.reader;
 
-import com.company.reader.ReaderException;
 import org.junit.Test;
 
 

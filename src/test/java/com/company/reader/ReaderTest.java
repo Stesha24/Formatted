@@ -1,8 +1,5 @@
-package com.company.Reader;
+package com.company.reader;
 
-import com.company.reader.IReader;
-import com.company.reader.Reader;
-import com.company.reader.ReaderException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +8,7 @@ import java.io.FileReader;
 import static org.junit.Assert.*;
 
 /**
- * Created by anastasia on 07.12.16.
+ * test for ReaderException.
  */
 public class ReaderTest {
     private IReader ir;

@@ -1,6 +1,5 @@
 package com.company.formatter;
 
-import com.company.formatter.Formatter;
 import org.junit.Test;
 
 
