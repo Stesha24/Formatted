@@ -14,7 +14,7 @@ public final class Formatter {
     /**
      * Formatter.
      */
-    public Formatter() {
+    protected Formatter() {
         //not called
 
     }

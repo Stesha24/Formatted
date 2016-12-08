@@ -14,8 +14,8 @@ public class NewLine implements ICommand {
     public final void execute(final Context context) throws WriterException {
         try {
 
-            if (context.isComment) {
-                context.isComment = false;
+            if (context.isComment()) {
+                context.setIsComment(false);
             }
             context.getIw().writeChar(context.getCurrChar());
             for (int i = 0; i < context.getTab(); i++) {

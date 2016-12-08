@@ -22,7 +22,7 @@ public class Star implements ICommand {
                 for (int i = 0; i < context.getTab(); i++) {
                     context.getIw().writeChar('\t');
                 }
-                context.isComment = false;
+                context.setIsComment(false);
                 context.setNextChar(context.getIr().readChar());
                 context.setCurrChar(context.getNextChar());
                 return;

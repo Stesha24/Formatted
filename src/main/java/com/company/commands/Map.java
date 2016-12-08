@@ -36,6 +36,7 @@ public class Map {
         conditions.put('*', new Star());
         conditions.put('\n', new NewLine());
         conditions.put(null, new Default());
+        conditions.put('"', new Str());
 
     }
 }

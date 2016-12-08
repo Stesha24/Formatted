@@ -20,7 +20,7 @@ public class Semicolon implements ICommand {
                 context.setCurrChar(context.getNextChar());
                 return;
             }
-            if (context.isComment || context.isString) {
+            if (context.isComment() || context.isString()) {
                 context.getIw().writeChar(context.getCurrChar());
                 context.setCurrChar(context.getNextChar());
                 return;

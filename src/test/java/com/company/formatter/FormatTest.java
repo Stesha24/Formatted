@@ -55,4 +55,12 @@ public class FormatTest {
         assertEquals("qwe;\n", iw.getString());
     }
 
+    @Test
+    public void strTest() throws Exception {
+        ir = new StringReader("qwe\"this is string;{};\";not string");
+        iw = new StringWriter();
+        testFormat.format(ir, iw);
+        assertEquals("qwe\"this is string;{};\";\nnot string", iw.getString());
+    }
+
 }

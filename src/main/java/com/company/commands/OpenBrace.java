@@ -13,7 +13,7 @@ public class OpenBrace implements ICommand {
     @Override
     public final void execute(final Context context) throws WriterException {
         try {
-            if (context.isComment || context.isString) {
+            if (context.isComment() || context.isString()) {
                 context.getIw().writeChar(context.getCurrChar());
                 context.setCurrChar(context.getNextChar());
                 return;

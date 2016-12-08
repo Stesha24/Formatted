@@ -16,7 +16,7 @@ public class Comment implements ICommand {
         try {
             if (context.getNextChar() == '/' || context.getNextChar() == '*') {
                 context.getIw().writeChar(context.getCurrChar());
-                context.isComment = true;
+                context.setIsComment(true);
                 context.setCurrChar(context.getNextChar());
                 return;
             }

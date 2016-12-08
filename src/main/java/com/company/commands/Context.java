@@ -30,7 +30,7 @@ public class Context {
     /**
      * Flags for comments and strings.
      */
-    public boolean isComment, isString;
+    private boolean isComment, isString;
 
     /**
      * Setting interfaces.
@@ -41,9 +41,36 @@ public class Context {
         this.setIr(r);
         this.setIw(w);
     }
+    /**
+     * getter.
+     * @return bool
+     */
+    public final boolean isString() {
+        return isString;
+    }
 
+    /**
+     * set context to string.
+     * @param isStr bool
+     */
+    public final void setIsString(final boolean isStr) {
+        this.isString = isStr;
+    }
+    /**
+     * getter.
+     * @return bool
+     */
+    public final boolean isComment() {
+        return isComment;
+    }
 
-
+    /**
+     * set context to comment.
+     * @param comment bool
+     */
+    public final void setIsComment(final boolean comment) {
+        isComment = comment;
+    }
 
     /**
      * For getting ir.
